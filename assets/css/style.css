@@ -12,6 +12,7 @@ body {
 :root {
   --font-heading: "Sen", sans-serif;
   --primary-color: #ffb900;
+  --line-clamp: 1;
 }
 /* ====================common================= */
 a {
@@ -48,7 +49,18 @@ a {
   line-height: 1.27;
   letter-spacing: -0.76px;
 }
-
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+.break-all {
+  word-break: break-all;
+}
 /* ===================header============== */
 .header {
   background: #fffcf4;
@@ -307,6 +319,7 @@ a {
   border: 1px solid #e2dfda;
 
   background: #fff;
+  flex: 1;
 }
 .popular .course-item:hover {
   border: 1px solid transparent;
